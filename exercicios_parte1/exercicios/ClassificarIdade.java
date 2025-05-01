@@ -11,38 +11,45 @@ public class ClassificarIdade {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
+		
+		int idade = obterIdade(sc);
 
-		classificarIdade(sc);
+		exibirClassificacao(idade);
 
 		sc.close();
 	}
+	
+	/**
+     * Solicita ao usuário uma idade válida e garante que seja um número positivo.
+     * @param sc Scanner utilizado para entrada de dados.
+     * @return Um número inteiro representando a idade.
+     */
 
-	public static int validarEntradaInt(Scanner sc) {
-		while (!sc.hasNextInt()) {
-			System.out.print("Entrada inválida! Digite um valor válido: ");
-			sc.next();
-		}
-		return sc.nextInt();
+	public static int obterIdade(Scanner sc) {
+		int idade;
+		do {
+			System.out.print("Informe a idade da pessoa: ");
+			while (!sc.hasNextInt()) {
+				System.out.print("Entrada inválida! Digite um valor válido: ");
+				sc.next();
+			}
+			idade = sc.nextInt();
+            if (idade < 0) {
+                System.out.println("O valor não pode ser negativo!");
+            }
+		}while(idade < 0);
+		return idade;
 	}
 
-	public static void classificarIdade(Scanner sc) {
-		int idade;
-
-		System.out.print("Informe a idade da pessoa: ");
-		idade = validarEntradaInt(sc);
+	public static void exibirClassificacao(int idade) {
 		
-		while(idade < 0) {
-			System.out.print("O valor não pode ser negativo! Digite um número válido: ");
-			idade = validarEntradaInt(sc);
-		}
-		
-		if (idade >= 0 && idade <= 12) {
+		if (idade <= 12) {
 			System.out.println("A pessoa é uma criança!");
-		} else if (idade >= 13 && idade <= 17) {
+		} else if (idade <= 17) {
 			System.out.println("A pessoa é um adolescente!");
-		} else if (idade >= 18 && idade <= 59) {
+		} else if (idade <= 59) {
 			System.out.println("A pessoa é um adulto!");
-		} else if (idade >= 60) {
+		} else {
 			System.out.println("A pessoa é um idoso!");
 		} 
 		
