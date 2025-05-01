@@ -56,16 +56,21 @@ public class ContadorDeNotas {
 		int notaEscolhida = 0;
 
 		switch (opcao) {
-		case 1 -> notaEscolhida = 100;
-		case 2 -> notaEscolhida = 50;
-		case 3 -> notaEscolhida = 20;
-		case 4 -> notaEscolhida = 10;
-		default -> {
-			System.out.println("Opção inválida!");
-			return;
+			case 1 -> notaEscolhida = 100;
+			case 2 -> notaEscolhida = 50;
+			case 3 -> notaEscolhida = 20;
+			case 4 -> notaEscolhida = 10;
+			default -> {
+				System.out.println("Opção inválida!");
+				return;
+			}
 		}
+		
+		while(valor < notaEscolhida) {
+			System.out.printf("O valor do saque deve ser no mínimo R$ %.2f para essa escolha de nota.%n", (double) notaEscolhida);
+			valor = obterValor(sc);
 		}
-
+		
 		int quantidadeNotas = (int) (valor / notaEscolhida);
 		System.out.printf("Saque de %d notas de R$ %.2f%nValor total de saque R$ %.2f%n", quantidadeNotas,
 				(double) notaEscolhida, valor);
