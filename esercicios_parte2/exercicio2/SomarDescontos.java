@@ -9,7 +9,11 @@ public class SomarDescontos {
 		
 		final double DESCONTO_NOVO = 0.05;
 		final double DESCONTO_VIP = 0.1;
+		final double DESCONTO_ESPECIAL = 0.1;
 		double descontoTotal = 0.0;
+		
+		System.out.print("Valor das compras: ");
+		double compras = sc.nextDouble();
 		
 		System.out.println("Escolhas as opções de Clientes:");
 		System.out.println("1 - Cliente novo");
@@ -33,6 +37,16 @@ public class SomarDescontos {
 			default:
 				System.out.println("Opção Inválida!");
 				break;
+		}
+		
+		double totalGasto = 0.0;
+		if(compras > 200.00) {
+			totalGasto = compras - (descontoTotal + DESCONTO_ESPECIAL) * compras;
+			System.out.println("O cliente teve mais um desconto de 10% em compras acima de R$ 200.00");
+			System.out.printf("\nO total gasto da compra com os descontos foi de R$ %.2f%n", totalGasto);
+		}else {
+			totalGasto = compras - (descontoTotal * compras);
+			System.out.printf("\nO total gasto da compra com os descontos foi de R$ %.2f%n", totalGasto);
 		}
 		
 		
