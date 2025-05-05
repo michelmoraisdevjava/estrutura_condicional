@@ -1,7 +1,5 @@
 package exercicio3;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 /*Crie uma rotina que analisa um array de notas e 
@@ -12,36 +10,21 @@ public class Program {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		List<Double> notas = new ArrayList<Double>();
 		
-		System.out.print("Total de notas: ");
-		int n = sc.nextInt();
+		Turma turma = new Turma();//Instanciando a Classe Turma
 		
 		System.out.print("Informe a quantidade de alunos: ");
 		int quantidadeAlunos = sc.nextInt();
 		
-		double nota = 0.0;
-		double soma = 0.0;
-		for(int i = 0; i < n; i++) {
+		for(int i = 0; i < quantidadeAlunos; i++) {
 			System.out.print("Informe a " + (i + 1) + "ª nota: ");
-			nota = sc.nextDouble();
-			notas.add(nota);
-			soma += nota;
+			double nota = sc.nextDouble();
+			turma.adicionarNota(nota);
 		}
 		
-		System.out.println();
-		double mediaDaTurma = soma / quantidadeAlunos;
-		System.out.printf("A media da turma: %.1f%n", mediaDaTurma);
-		
-		double somaComFiltro = 0.0;
-		for(double valor : notas) {
-			if(valor > mediaDaTurma) {
-				somaComFiltro +=  valor;
-			}
-		}
-		
+		System.out.printf("A media da turma: %.1f%n", turma.mediaDaTurma());
 		System.out.printf("\nResultado da soma das notas "
-				+ "acima da média da turma: %.1f ", somaComFiltro);
+				+ "acima da média da turma: %.1f ", turma.somarNotasAcimaDaMedia());
 		
 		sc.close();
 
