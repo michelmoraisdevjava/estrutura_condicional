@@ -18,7 +18,7 @@ public class Menu2 {
 		
 		String opcao = sc.nextLine();
 		
-		switch(opcao) {
+		switch(opcao.toLowerCase()) {
 			case "iniciar" -> System.out.println("Programa iniciado!");
 			case "parar" -> System.out.println("Programa parado!");
 			case "reiniciar" -> System.out.println("Programa reiniciado!");
