@@ -9,6 +9,6 @@
 	<classpathentry kind="src" path="exercicios_parte1"/>
 	<classpathentry kind="src" path="esercicios_parte2"/>
 	<classpathentry kind="src" path="exercicio_parte3_switch"/>
-	<classpathentry kind="src" path="exercicios_condicional_ternaria"/>
+	<classpathentry kind="src" path="condicional_ternaria"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
