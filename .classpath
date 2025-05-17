@@ -11,5 +11,6 @@
 	<classpathentry kind="src" path="exercicio_parte3_switch"/>
 	<classpathentry kind="src" path="condicional_ternaria"/>
 	<classpathentry kind="src" path="escopo_inicializacao"/>
+	<classpathentry kind="src" path="desafio"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
