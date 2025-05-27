@@ -1,17 +1,23 @@
 package exercicios_resolvidos;
 
+import java.util.Scanner;
+
 public class Exercicio1 {
 
 	public static void main(String[] args) {
-		int x;
+		Scanner sc = new Scanner(System.in);
+		
+		int x = sc.nextInt();
 
-		if (true) {
-			x = 7;
+		if (x == 7) {
+			System.out.println("Acertou");
 		} else {
-			x = 0;
+			System.out.println("Errou!");
 		}
 
 		System.out.println(x);
+		
+		sc.close();
 
 	}
 
